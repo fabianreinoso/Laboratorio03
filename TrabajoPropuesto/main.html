@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Style.css">
+    <title>Cambio de monedas</title>
+    <script type="text/javascript">
+        function cambiar(){
+            var cambio = parseInt(document.getElementById("entrada").value);
+            var resultado = 0;
+            var dolar = 3.85;
+            var euro = 3.86;
+            if(document.getElementById("dolar").checked){
+                resultado = cambio * dolar;
+                alert("El cambio de soles a dolares es: " + resultado.toFixed(4))
+            }
+            else if (document.getElementById("euro").checked){
+                resultado = cambio * euro;
+                alert("El cambio de soles a euros es: " +  resultado.toFixed(4))
+            }
+            else{
+                alert("El campo esta vacio")
+            }
+        }
+    </script>   
+</head>
+<body>
+    <h1 class="title">Cambio de monedas</h1>
+    <div class="caja">
+        <h2 class="caja-title">Casa de cambio</h2>
+        <h3 class="caja-title-text">Seleccione moneda a enviar: </h3>
+        <input type="radio" name="group1" id="dolar">
+        <label for="d1" class="dolar-text">Dolar</label>
+        <input type="radio" name="group1" id="euro">
+        <label for="e1" class="euro-text">Euro</label>
+        <h3 class="text-monto">Ingrese monto en Soles:</h3>
+        <input type="number" id="entrada" min="1">
+        <input type="button" name="boton-cambiar" value="Cambiar" id="boton-cambiar" onclick="cambiar()">
+    </div>
+</body>
+</html>
